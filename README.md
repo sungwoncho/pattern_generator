@@ -1,7 +1,7 @@
-# PatternGenerator
+# Pattern Generator
 
-Pattern Generator is the missing generator in Rails that lets you generate various patterns
-and tests at appropriate locations with a single command.
+Pattern Generator lets you generate various Rails patterns and tests with a single
+command.
 
 
 ## Install
@@ -58,6 +58,14 @@ end
 
 As you can see, the generated codes are minimalistic and lets you immediately
 hit the ground running.
+
+
+## Options
+
+* `--test-suite`: Specify what test suite you are using. (`minitest` or `rspec`).
+
+DEFAULT: `rspec`
+
 
 ## Contributing
 
