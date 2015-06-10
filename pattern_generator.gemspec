@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = PatternGenerator::VERSION
   s.authors     = ["Sung Won Cho"]
   s.email       = ["mikeswcho@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of PatternGenerator."
-  s.description = "TODO: Description of PatternGenerator."
+  s.homepage    = "https://github.com/sungwoncho/pattern_generator"
+  s.summary     = "The missing generators for Rails design patterns."
+  s.description = "Pattern generator provides you with convenient commands to generate patterns in your Rails app."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
