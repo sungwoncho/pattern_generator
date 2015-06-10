@@ -1,0 +1,2 @@
+module PatternGenerator
+end
