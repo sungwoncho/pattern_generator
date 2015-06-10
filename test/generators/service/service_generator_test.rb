@@ -20,7 +20,15 @@ class ServiceGeneratorTest < Rails::Generators::TestCase
     run_generator %w(find_match)
 
     assert_file 'spec/services/find_match_service_spec.rb' do |content|
-      assert_match /RSpec.describe FindMatchService, type: :service/, content 
+      assert_match /RSpec.describe FindMatchService, type: :service/, content
+    end
+  end
+
+  test 'generates minitest file if test-framework is minitest' do
+    run_generator %w(find_match --test-suite=minitest)
+
+    assert_file 'test/services/find_match_service_test.rb' do |content|
+      assert_match /class FindMatchServiceTest < Minitest::Test/, content
     end
   end
 
