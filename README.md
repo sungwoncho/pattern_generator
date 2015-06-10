@@ -19,7 +19,11 @@ Now you are ready to rock the pattern generator!
 
 ## Usage
 
-Pattern Generator can generate the following patterns.
+```
+rails generate [PATTERN_TYPE] [YOUR_FILE_NAME]
+```
+
+Here are usage examples.
 
 ### Service
 
