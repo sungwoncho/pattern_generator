@@ -3,6 +3,9 @@
 Pattern Generator lets you generate various Rails patterns and tests with a single
 command.
 
+It generates minimalistic templates for your patterns that you can customize and
+hit the ground running.
+
 
 ## Install
 
@@ -23,7 +26,7 @@ Now you are ready to rock the pattern generator!
 rails generate [PATTERN_TYPE] [YOUR_FILE_NAME]
 ```
 
-Here are usage examples.
+Here are possible values for PATTERN_TYPE.
 
 ### Service
 
@@ -31,7 +34,8 @@ Here are usage examples.
 rails generate service find_match
 ```
 
-The above command will generate these two files.
+generates:
+
 
 *app/services/find_match_service.rb*
 ```ruby
@@ -60,8 +64,40 @@ RSpec.describe FindMatchService, type: :service do
 end
 ```
 
-As you can see, the generated codes are minimalistic and lets you immediately
-hit the ground running.
+### Policy
+
+```
+rails generate policy voting
+```
+
+generates:
+
+
+*app/policies/voting_policy.rb*
+```ruby
+class VotingPolicy
+  def initialize
+
+  end
+
+  def policy_method
+    # Customize to fit your need
+  end
+end
+```
+
+*spec/policies/voting_policy_spec.rb*
+```ruby
+require 'rails_helper'
+
+RSpec.describe VotingPolicy, type: :policy do
+  describe '#policy_method' do
+    it 'does something' do
+
+    end
+  end
+end
+```
 
 
 ## Options

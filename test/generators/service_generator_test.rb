@@ -7,6 +7,12 @@ class ServiceGeneratorTest < Rails::Generators::TestCase
   destination File.join(Rails.root)
   teardown :cleanup
 
+  def cleanup
+    FileUtils.rm_rf(File.join(Rails.root, 'app/services'))
+    FileUtils.rm_rf(File.join(Rails.root, 'spec/services'))
+    FileUtils.rm_rf(File.join(Rails.root, 'test/services'))
+  end
+
   test 'correct file is generated' do
     run_generator %w(find_match)
 
@@ -30,10 +36,5 @@ class ServiceGeneratorTest < Rails::Generators::TestCase
     assert_file 'test/services/find_match_service_test.rb' do |content|
       assert_match /class FindMatchServiceTest < Minitest::Test/, content
     end
-  end
-
-  def cleanup
-    FileUtils.rm_rf(File.join(Rails.root, 'app/services'))
-    FileUtils.rm_rf(File.join(Rails.root, 'spec/services'))
   end
 end
