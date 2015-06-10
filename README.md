@@ -23,7 +23,9 @@ Pattern Generator can generate the following patterns.
 
 ### Service
 
-`rails generate service find_match`
+```
+rails generate service find_match
+```
 
 The above command will generate these two files.
 
@@ -59,8 +61,9 @@ hit the ground running.
 
 ## Contributing
 
-Open an issue or pull request if you have any suggestions, or improvements.
-This project respects the contributor code of conduct.
+Open an issue or pull request with any feedback, or improvements.
+
+This project respects the [contributor code of conduct](https://github.com/sungwoncho/pattern_generator/blob/master/code_of_conduct.md).
 
 ## License
 
