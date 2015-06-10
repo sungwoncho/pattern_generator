@@ -3,9 +3,6 @@
 Pattern Generator lets you generate various Rails patterns and tests with a single
 command.
 
-It generates minimalistic templates for your patterns that you can customize and
-hit the ground running.
-
 
 ## Install
 
@@ -23,10 +20,14 @@ Now you are ready to rock the pattern generator!
 ## Usage
 
 ```
-rails generate [PATTERN_TYPE] [YOUR_FILE_NAME]
+rails generate [PATTERN_TYPE] [YOUR_FILE_NAME (in snake_case)]
 ```
 
-Here are possible values for PATTERN_TYPE.
+PATTERN_TYPE can be:
+
+* Service
+* Policy
+
 
 ### Service
 
@@ -108,7 +109,7 @@ DEFAULT: `rspec`
 
 ## Contributing
 
-Open an issue or pull request with any feedback, or improvements.
+Know your patterns? Open a pull request!
 
 This project respects the [contributor code of conduct](https://github.com/sungwoncho/pattern_generator/blob/master/code_of_conduct.md).
 
