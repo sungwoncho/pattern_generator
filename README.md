@@ -1,4 +1,4 @@
-# Pattern Generator
+# Pattern Generator [![Build Status](https://travis-ci.org/sungwoncho/pattern_generator.svg?branch=master)](https://travis-ci.org/sungwoncho/pattern_generator)
 
 Pattern Generator lets you generate various Rails patterns and tests with a single
 command.
