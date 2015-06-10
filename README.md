@@ -29,6 +29,10 @@ PATTERN_TYPE can be:
 * Policy
 
 
+## Examples
+
+Here are usage examples with commands and generated files.
+
 ### Service
 
 ```
@@ -102,9 +106,11 @@ end
 
 ## Options
 
-* `--test-suite`: Specify what test suite you are using. (`minitest` or `rspec`).
+`--test-suite`
 
-DEFAULT: `rspec`
+* Specify the test suite to generate the test files with. (`minitest` or `rspec`).
+* DEFAULT: `rspec`
+* Usage: `rails generate service subscribe_user --test-suite=minitest`
 
 
 ## Contributing
