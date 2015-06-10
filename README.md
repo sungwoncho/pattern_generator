@@ -40,7 +40,6 @@ generates:
 *app/services/find_match_service.rb*
 ```ruby
 class FindMatchService
-
   def initialize
 
   end

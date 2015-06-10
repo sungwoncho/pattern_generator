@@ -1,5 +1,4 @@
 class <%= class_name %>Service
-
   def initialize
 
   end
