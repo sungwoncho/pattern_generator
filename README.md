@@ -115,11 +115,19 @@ end
   * Usage: `rails generate service subscribe_user --test-suite=minitest`
 
 
+## Where can I learn about more patterns?
+
+* [7 Patterns to Refactor Fat ActiveRecord Models](http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/)
+
+Feel free to add good blog articles or tutorials here.
+
+
 ## Contributing
 
 Know your patterns? Open a pull request!
 
 This project respects the [contributor code of conduct](https://github.com/sungwoncho/pattern_generator/blob/master/code_of_conduct.md).
+
 
 ## License
 
