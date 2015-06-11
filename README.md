@@ -23,10 +23,12 @@ Now you are ready to rock the pattern generator!
 rails generate [PATTERN_TYPE] [YOUR_FILE_NAME (in snake_case)]
 ```
 
-PATTERN_TYPE can be:
+Currently, PATTERN_TYPE can be:
 
 * Service
 * Policy
+
+Destroy command is also supported.
 
 
 ## Examples
