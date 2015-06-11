@@ -27,6 +27,7 @@ Currently, PATTERN_TYPE can be:
 
 * Service
 * Policy
+* PORO (Plain Old Ruby Object)
 
 Destroy command is also supported.
 
@@ -103,6 +104,39 @@ RSpec.describe VotingPolicy, type: :policy do
     end
   end
 end
+```
+
+### PORO (Plain Old Ruby Object)
+
+```
+rails generate poro payment_gateway
+```
+
+generates a minimalistic non-ActiveRecord model that can be customized to fit your needs:
+
+
+*app/models/payment_gateway.rb*
+```ruby
+class PaymentGateway
+  def initialize
+
+  end
+end
+
+```
+
+*spec/policies/payment_gateway_spec.rb*
+```ruby
+require 'rails_helper'
+
+RSpec.describe PaymentGateway do
+  describe 'something' do
+    it 'does something' do
+
+    end
+  end
+end
+
 ```
 
 
