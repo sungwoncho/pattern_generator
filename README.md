@@ -106,11 +106,11 @@ end
 
 ## Options
 
-`--test-suite`
+* `--test-suite`
 
-* Specify the test suite to generate the test files with. (`minitest` or `rspec`).
-* DEFAULT: `rspec`
-* Usage: `rails generate service subscribe_user --test-suite=minitest`
+  * Specify the test suite to generate the test files with. (`minitest` or `rspec`).
+  * DEFAULT: `rspec`
+  * Usage: `rails generate service subscribe_user --test-suite=minitest`
 
 
 ## Contributing
