@@ -108,11 +108,13 @@ end
 
 ### PORO (Plain Old Ruby Object)
 
+a minimalistic non-ActiveRecord model that can be customized to fit your needs
+
 ```
 rails generate poro payment_gateway
 ```
 
-generates a minimalistic non-ActiveRecord model that can be customized to fit your needs:
+generates:
 
 
 *app/models/payment_gateway.rb*
