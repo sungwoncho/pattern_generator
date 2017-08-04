@@ -1,4 +1,4 @@
-class <%= class_name %>Policy
+class <%= class_name %>
   def initialize
     
   end
