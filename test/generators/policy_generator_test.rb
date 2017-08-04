@@ -19,6 +19,7 @@ class PolicyGeneratorTest < Rails::Generators::TestCase
 
     assert_file 'app/policies/active_user.rb' do |content|
       assert_match /class ActiveUser/, content
+      assert_match /def initialize/, content
     end
   end
 
@@ -27,6 +28,7 @@ class PolicyGeneratorTest < Rails::Generators::TestCase
 
     assert_file 'spec/policies/active_user_spec.rb' do |content|
       assert_match /RSpec.describe ActiveUser, type: :policy do/, content
+      assert_match /pending/, content
     end
   end
 
