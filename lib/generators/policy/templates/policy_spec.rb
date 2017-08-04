@@ -1,9 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe <%= class_name %>Policy, type: :policy do
-  describe '#policy_method' do
-    it 'does something' do
-      
-    end
-  end
+RSpec.describe <%= class_name %>, type: :policy do
+  pending "Add some tests to #{__FILE__}"
 end
