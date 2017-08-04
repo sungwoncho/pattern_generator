@@ -18,6 +18,7 @@ class ServiceGeneratorTest < Rails::Generators::TestCase
 
     assert_file 'app/services/find_match.rb' do |content|
       assert_match /FindMatch/, content
+      assert_match /def initialize/, content
     end
   end
 
