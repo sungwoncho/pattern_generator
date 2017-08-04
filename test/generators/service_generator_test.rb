@@ -27,6 +27,7 @@ class ServiceGeneratorTest < Rails::Generators::TestCase
 
     assert_file 'spec/services/find_match_spec.rb' do |content|
       assert_match /RSpec.describe FindMatch, type: :service/, content
+      assert_match /pending/, content
     end
   end
 
