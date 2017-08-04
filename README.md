@@ -28,6 +28,7 @@ Currently, PATTERN_TYPE can be:
 * Service
 * Policy
 * PORO (Plain Old Ruby Object)
+* Form
 
 Destroy command is also supported.
 
