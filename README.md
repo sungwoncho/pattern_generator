@@ -52,10 +52,6 @@ class FindMatchService
   def initialize
 
   end
-
-  def call
-
-  end
 end
 ```
 
@@ -65,9 +61,7 @@ require 'rails_helper'
 
 RSpec.describe FindMatchService, type: :service do
   describe '#call' do
-    it 'performs something' do
-
-    end
+    pending "Add some tests to #{__FILE__}"
   end
 end
 ```
@@ -87,10 +81,6 @@ class VotingPolicy
   def initialize
 
   end
-
-  def policy_method
-    # Customize to fit your need
-  end
 end
 ```
 
@@ -100,9 +90,7 @@ require 'rails_helper'
 
 RSpec.describe VotingPolicy, type: :policy do
   describe '#policy_method' do
-    it 'does something' do
-
-    end
+    pending "Add some tests to #{__FILE__}"
   end
 end
 ```
@@ -134,9 +122,7 @@ require 'rails_helper'
 
 RSpec.describe PaymentGateway do
   describe 'something' do
-    it 'does something' do
-
-    end
+    pending "Add some tests to #{__FILE__}"
   end
 end
 
