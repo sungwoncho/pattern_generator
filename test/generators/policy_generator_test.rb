@@ -39,4 +39,16 @@ class PolicyGeneratorTest < Rails::Generators::TestCase
     end
   end
 
+  test 'generates files with no suffixes if --no-sufix option is passed' do
+    run_generator %w(active_user --no-suffix)
+
+    assert_file 'app/policies/active_user.rb' do |content|
+      assert_match /ActiveUser/, content
+      assert_match /def initialize/, content
+    end
+
+    assert_file 'spec/policies/active_user_spec.rb' do |content|
+      assert_match /RSpec.describe ActiveUser, type: :policy/, content
+    end
+  end
 end

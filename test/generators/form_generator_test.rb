@@ -30,11 +30,24 @@ class FormGeneratorTest < Rails::Generators::TestCase
     end
   end
 
-  test 'generates minitest file if test-framework is minitest' do
+  test 'generates minitest file if --minitest options is passed' do
     run_generator %w(registration --minitest)
 
     assert_file 'test/forms/registration_form_test.rb' do |content|
       assert_match /class RegistrationFormTest < Minitest::Test/, content
+    end
+  end
+
+  test 'generates files with no suffixes if --no-sufix option is passed' do
+    run_generator %w(registration --no-suffix)
+
+    assert_file 'app/forms/registration.rb' do |content|
+      assert_match /Registration/, content
+      assert_match /def initialize/, content
+    end
+
+    assert_file 'spec/forms/registration_spec.rb' do |content|
+      assert_match /RSpec.describe Registration, type: :form/, content
     end
   end
 end
