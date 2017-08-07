@@ -21,7 +21,7 @@ class BaseGenerator < Rails::Generators::NamedBase
 
   # Determines the class name based on the file name given by the user.
   def class_name
-    file_name.classify
+    file_name.classify + suffix.classify
   end
 
   # This method must be overrided in the child classes.
@@ -33,14 +33,16 @@ class BaseGenerator < Rails::Generators::NamedBase
     pattern_name.pluralize
   end
 
+  # Generates the pattern suffix.
+  # Ex: _service
   def suffix
-    no_suffix? ? "" : pattern_name.classify
+    options.no_suffix? ? "" : "_#{pattern_name}"
   end
 
   # Generates the file path.
   # Ex: app/services/authentication.rb
   def generated_file_path
-    "app/#{folder_name}/#{file_name}.rb"
+    "app/#{folder_name}/#{file_name}#{suffix}.rb"
   end
 
   def test_suite_identifier
@@ -52,6 +54,6 @@ class BaseGenerator < Rails::Generators::NamedBase
   # Generates the test file path.
   # Ex: spec/services/authentication_spec.rb
   def generated_test_file_path
-    "#{test_suite_identifier}/#{folder_name}/#{file_name}_#{test_suite_identifier}.rb"
+    "#{test_suite_identifier}/#{folder_name}/#{file_name}#{suffix}_#{test_suite_identifier}.rb"
   end
 end

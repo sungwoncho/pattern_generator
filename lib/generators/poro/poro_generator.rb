@@ -10,4 +10,8 @@ class PoroGenerator < BaseGenerator
   def pattern_name
     "poro"
   end
+
+  def suffix
+    ""
+  end
 end
