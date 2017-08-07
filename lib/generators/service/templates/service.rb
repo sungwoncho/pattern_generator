@@ -1,9 +1,5 @@
-class <%= class_name %>Service
+class <%= class_name %>
   def initialize
-
-  end
-
-  def call
 
   end
 end

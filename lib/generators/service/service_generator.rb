@@ -5,14 +5,14 @@ class ServiceGenerator < Rails::Generators::NamedBase
   class_option :test_suite, type: :string, default: 'rspec', desc: 'Test framework to generate test. (rspec or minitest)'
 
   def copy_service_file
-    template 'service.rb', "app/services/#{file_name}_service.rb"
+    template 'service.rb', "app/services/#{file_name}.rb"
   end
 
   def copy_service_test_file
     if options.test_suite == 'rspec'
-      template 'service_spec.rb', "spec/services/#{file_name}_service_spec.rb"
+      template 'service_spec.rb', "spec/services/#{file_name}_spec.rb"
     elsif options.test_suite == 'minitest'
-      template 'service_test.rb', "test/services/#{file_name}_service_test.rb"
+      template 'service_test.rb', "test/services/#{file_name}_test.rb"
     end
   end
 
