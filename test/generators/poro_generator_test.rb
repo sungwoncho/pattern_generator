@@ -1,5 +1,4 @@
 require 'test_helper'
-require 'generators/poro/poro_generator'
 
 class PoroGeneratorTest < Rails::Generators::TestCase
   tests PoroGenerator
@@ -31,7 +30,7 @@ class PoroGeneratorTest < Rails::Generators::TestCase
   end
 
   test 'minitest file is generated when test-suite is minitest' do
-    run_generator %w(grade --test-suite=minitest)
+    run_generator %w(grade --minitest)
 
     assert_file 'test/models/grade_test.rb' do |content|
       assert_match /class GradeTest < MiniTest::Test/, content

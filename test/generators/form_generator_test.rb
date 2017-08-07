@@ -1,5 +1,4 @@
 require 'test_helper'
-require 'generators/form/form_generator'
 
 class FormGeneratorTest < Rails::Generators::TestCase
   tests FormGenerator
@@ -16,8 +15,8 @@ class FormGeneratorTest < Rails::Generators::TestCase
   test 'correct file is generated' do
     run_generator %w(registration)
 
-    assert_file 'app/forms/registration.rb' do |content|
-      assert_match /Registration/, content
+    assert_file 'app/forms/registration_form.rb' do |content|
+      assert_match /RegistrationForm/, content
       assert_match /def initialize/, content
     end
   end
@@ -25,17 +24,30 @@ class FormGeneratorTest < Rails::Generators::TestCase
   test 'correct spec file is generated' do
     run_generator %w(registration)
 
-    assert_file 'spec/forms/registration_spec.rb' do |content|
-      assert_match /RSpec.describe Registration, type: :form/, content
+    assert_file 'spec/forms/registration_form_spec.rb' do |content|
+      assert_match /RSpec.describe RegistrationForm, type: :form/, content
       assert_match /pending/, content
     end
   end
 
-  test 'generates minitest file if test-framework is minitest' do
-    run_generator %w(registration --test-suite=minitest)
+  test 'generates minitest file if --minitest options is passed' do
+    run_generator %w(registration --minitest)
 
-    assert_file 'test/forms/registration_test.rb' do |content|
-      assert_match /class RegistrationTest < Minitest::Test/, content
+    assert_file 'test/forms/registration_form_test.rb' do |content|
+      assert_match /class RegistrationFormTest < Minitest::Test/, content
+    end
+  end
+
+  test 'generates files with no suffixes if --no-sufix option is passed' do
+    run_generator %w(registration --no-suffix)
+
+    assert_file 'app/forms/registration.rb' do |content|
+      assert_match /Registration/, content
+      assert_match /def initialize/, content
+    end
+
+    assert_file 'spec/forms/registration_spec.rb' do |content|
+      assert_match /RSpec.describe Registration, type: :form/, content
     end
   end
 end

@@ -131,11 +131,12 @@ end
 
 ## Options
 
-* `--test-suite`
+* `--minitest`
+  * Will create your test files inside test folder. 
+* DEFAULT: `--rspec`
+  * Will create your test files inside spec folder.
 
-  * Specify the test suite to generate the test files with. (`minitest` or `rspec`).
-  * DEFAULT: `rspec`
-  * Usage: `rails generate service subscribe_user --test-suite=minitest`
+* Usage: `rails generate service subscribe_user --minitest`
 
 
 ## Where can I learn about more patterns?
@@ -155,3 +156,4 @@ This project respects the [contributor code of conduct](https://github.com/sungw
 ## License
 
 This project rocks and uses MIT-LICENSE.
+

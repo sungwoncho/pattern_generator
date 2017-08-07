@@ -1,5 +1,4 @@
 require 'test_helper'
-require 'generators/policy/policy_generator'
 
 class PolicyGeneratorTest < Rails::Generators::TestCase
   tests PolicyGenerator
@@ -17,8 +16,8 @@ class PolicyGeneratorTest < Rails::Generators::TestCase
   test "correct file is generated" do
     run_generator %w(active_user)
 
-    assert_file 'app/policies/active_user.rb' do |content|
-      assert_match /class ActiveUser/, content
+    assert_file 'app/policies/active_user_policy.rb' do |content|
+      assert_match /class ActiveUserPolicy/, content
       assert_match /def initialize/, content
     end
   end
@@ -26,18 +25,30 @@ class PolicyGeneratorTest < Rails::Generators::TestCase
   test "rspec file is generated" do
     run_generator %w(active_user)
 
-    assert_file 'spec/policies/active_user_spec.rb' do |content|
-      assert_match /RSpec.describe ActiveUser, type: :policy do/, content
+    assert_file 'spec/policies/active_user_policy_spec.rb' do |content|
+      assert_match /RSpec.describe ActiveUserPolicy, type: :policy do/, content
       assert_match /pending/, content
     end
   end
 
   test "if minitest is specified, minitest file is generated" do
-    run_generator %w(active_user --test-suite=minitest)
+    run_generator %w(active_user --minitest)
 
-    assert_file 'test/policies/active_user_test.rb' do |content|
-      assert_match /class ActiveUserTest < Minitest::Test/, content
+    assert_file 'test/policies/active_user_policy_test.rb' do |content|
+      assert_match /class ActiveUserPolicyTest < Minitest::Test/, content
     end
   end
 
+  test 'generates files with no suffixes if --no-sufix option is passed' do
+    run_generator %w(active_user --no-suffix)
+
+    assert_file 'app/policies/active_user.rb' do |content|
+      assert_match /ActiveUser/, content
+      assert_match /def initialize/, content
+    end
+
+    assert_file 'spec/policies/active_user_spec.rb' do |content|
+      assert_match /RSpec.describe ActiveUser, type: :policy/, content
+    end
+  end
 end
