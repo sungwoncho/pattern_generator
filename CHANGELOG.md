@@ -5,6 +5,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [0.2.0] - 2017-08-07
+### Added
+- `--minitest` option to specify you're using minitest.
+- `--rspec` option to specify you're using minitest. It is the default behaviour.
+- `--no-suffix` option to specify you don't want any suffixes.
+### Changed
+- Get back to using suffixes by default.
+### Removed
+- `--test-suite` option to specify which test suite you're using.
 
 ## [0.1.5] - 2017-08-04
 ### Added
