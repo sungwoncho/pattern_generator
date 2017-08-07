@@ -1,5 +1,4 @@
 require 'test_helper'
-require 'generators/form/form_generator'
 
 class FormGeneratorTest < Rails::Generators::TestCase
   tests FormGenerator
@@ -32,7 +31,7 @@ class FormGeneratorTest < Rails::Generators::TestCase
   end
 
   test 'generates minitest file if test-framework is minitest' do
-    run_generator %w(registration --test-suite=minitest)
+    run_generator %w(registration --minitest)
 
     assert_file 'test/forms/registration_test.rb' do |content|
       assert_match /class RegistrationTest < Minitest::Test/, content

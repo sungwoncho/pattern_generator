@@ -1,5 +1,4 @@
 require 'test_helper'
-require 'generators/policy/policy_generator'
 
 class PolicyGeneratorTest < Rails::Generators::TestCase
   tests PolicyGenerator
@@ -33,7 +32,7 @@ class PolicyGeneratorTest < Rails::Generators::TestCase
   end
 
   test "if minitest is specified, minitest file is generated" do
-    run_generator %w(active_user --test-suite=minitest)
+    run_generator %w(active_user --minitest)
 
     assert_file 'test/policies/active_user_test.rb' do |content|
       assert_match /class ActiveUserTest < Minitest::Test/, content

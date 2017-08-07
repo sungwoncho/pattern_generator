@@ -1,5 +1,4 @@
 require 'test_helper'
-require 'generators/service/service_generator'
 
 class ServiceGeneratorTest < Rails::Generators::TestCase
   tests ServiceGenerator
@@ -32,7 +31,7 @@ class ServiceGeneratorTest < Rails::Generators::TestCase
   end
 
   test 'generates minitest file if test-framework is minitest' do
-    run_generator %w(find_match --test-suite=minitest)
+    run_generator %w(find_match --minitest)
 
     assert_file 'test/services/find_match_test.rb' do |content|
       assert_match /class FindMatchTest < Minitest::Test/, content
