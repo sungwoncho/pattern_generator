@@ -8,12 +8,12 @@ class BaseGenerator < Rails::Generators::NamedBase
   class_option :no_suffix, type: :boolean, desc: "If you don't want any pattern suffix. Ex: AuthenticationService. Service is the suffix."
 
   # Creates the file for the requested pattern based on a template file.
-  def copy_service_file
+  def copy_pattern_file
     template "#{pattern_name}.rb", generated_file_path
   end
 
   # Creates the test file for the request pattern based on a template file.
-  def copy_forms_test_file
+  def copy_pattern_test_file
     template "#{pattern_name}_#{test_suite_identifier}.rb", generated_test_file_path
   end
 

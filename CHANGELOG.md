@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ## [0.2.0] - 2017-08-07
 ### Added
-- `--minitest` option to specify you're using minitest.
-- `--rspec` option to specify you're using minitest. It is the default behaviour.
+- `--minitest` option to specify you're using MiniTest.
+- `--rspec` option to specify you're using RSpec. It is the default behaviour.
 - `--no-suffix` option to specify you don't want any suffixes.
 ### Changed
 - Get back to using suffixes by default.
