@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pattern_generator (0.2.0)
+    pattern_generator (0.1.0)
       rails (>= 4.0.0)
 
 GEM
