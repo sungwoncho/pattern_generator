@@ -28,6 +28,7 @@ Currently, PATTERN_TYPE can be:
 * Service
 * Policy
 * PORO (Plain Old Ruby Object)
+* Form
 
 Destroy command is also supported.
 
@@ -51,10 +52,6 @@ class FindMatchService
   def initialize
 
   end
-
-  def call
-
-  end
 end
 ```
 
@@ -64,9 +61,7 @@ require 'rails_helper'
 
 RSpec.describe FindMatchService, type: :service do
   describe '#call' do
-    it 'performs something' do
-
-    end
+    pending "Add some tests to #{__FILE__}"
   end
 end
 ```
@@ -86,10 +81,6 @@ class VotingPolicy
   def initialize
 
   end
-
-  def policy_method
-    # Customize to fit your need
-  end
 end
 ```
 
@@ -99,9 +90,7 @@ require 'rails_helper'
 
 RSpec.describe VotingPolicy, type: :policy do
   describe '#policy_method' do
-    it 'does something' do
-
-    end
+    pending "Add some tests to #{__FILE__}"
   end
 end
 ```
@@ -133,9 +122,7 @@ require 'rails_helper'
 
 RSpec.describe PaymentGateway do
   describe 'something' do
-    it 'does something' do
-
-    end
+    pending "Add some tests to #{__FILE__}"
   end
 end
 
@@ -144,11 +131,12 @@ end
 
 ## Options
 
-* `--test-suite`
+* `--minitest`
+  * Will create your test files inside test folder. 
+* DEFAULT: `--rspec`
+  * Will create your test files inside spec folder.
 
-  * Specify the test suite to generate the test files with. (`minitest` or `rspec`).
-  * DEFAULT: `rspec`
-  * Usage: `rails generate service subscribe_user --test-suite=minitest`
+* Usage: `rails generate service subscribe_user --minitest`
 
 
 ## Where can I learn about more patterns?
@@ -168,3 +156,4 @@ This project respects the [contributor code of conduct](https://github.com/sungw
 ## License
 
 This project rocks and uses MIT-LICENSE.
+
